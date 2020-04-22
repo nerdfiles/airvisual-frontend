@@ -1,6 +1,6 @@
-# Air Visual Frontend
+# AirVisual Frontend
 
-Frontend for https://github.com/nerdfiles/airvisual-api
+Frontend for https://github.com/nerdfiles/airvisual-api, exploring https://www.iqair.com public data.
 
 ## Setup
 
