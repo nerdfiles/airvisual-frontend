@@ -11,10 +11,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-export function RestangularConfigFactory (RestangularProvider) {
-  RestangularProvider.setBaseUrl('http://localhost:3000');
-}
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -27,7 +23,10 @@ export function RestangularConfigFactory (RestangularProvider) {
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    {
+      provide: RouteReuseStrategy,
+      useClass: IonicRouteStrategy
+    }
   ],
   bootstrap: [AppComponent]
 })

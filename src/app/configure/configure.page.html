@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Configure
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Country</ion-label>
+    <ion-select 
+      (ngModelChange)="selectedCountryHandler($event)"
+      [ngModel]="selectedCountry"
+    >
+      <ion-select-option 
+        *ngFor="let country of countries"
+      >{{country.country}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>State</ion-label>
+    <ion-select
+      (ngModelChange)="selectedStateHandler($event)"
+      [ngModel]="selectedState"
+    >
+      <ion-select-option
+        *ngFor="let state of states"
+      >{{state.state}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>City</ion-label>
+    <ion-select
+      (ngModelChange)="selectedCityHandler($event)"
+      [ngModel]="selectedCity"
+    > 
+      <ion-select-option
+        *ngFor="let city of cities"
+      >{{city.city}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+</ion-content>

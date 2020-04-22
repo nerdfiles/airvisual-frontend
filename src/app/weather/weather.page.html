@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Weather
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"> 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{selectedCityData.city}}, {{selectedCityData.state}}</ion-card-subtitle>
+      <ion-card-title>{{selectedCityData.location.coordinates.join(', ')}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h2>Weather</h2>
+      <h3>Temp</h3>
+      <div><img 
+        alt="{{altIcon.description}}"
+        src="http://via.placeholder.com/32x32?text={{selectedCityData.current.weather.ic}}"
+      /> {{selectedCityData.current.weather.tp}} (in Celsius)</div>
+      <h3>Atmospheric pressure</h3>
+      <div>{{selectedCityData.current.weather.pr}}</div>
+      <h3>Humidity</h3>
+      <div>{{selectedCityData.current.weather.hu}}</div>
+      <h3>Wind speed</h3>
+      <div>{{selectedCityData.current.weather.ws}}</div>
+      <h3>Wind direction</h3>
+      <div>{{selectedCityData.current.weather.wd}}</div>
+      <h3>Timestamp</h3>
+      <div>{{selectedCityData.current.weather.ts}}</div>
+      <h2>Pollution</h2>
+      <div>United States, 
+        Score: {{selectedCityData.current.pollution.aqius}} 
+        | Main pollutant <abbr title="Air Quality Index">AQI</abbr>: 
+          {{selectedCityData.current.pollution.mainus}}</div>
+      <div>China, 
+        Score: {{selectedCityData.current.pollution.aqicn}} 
+        | Main pollutant <abbr title="Air Quality Index">AQI</abbr>: 
+          {{selectedCityData.current.pollution.maincn}}</div>
+      <h3>Timestamp</h3>
+      <div>{{selectedCityData.current.pollution.ts}}</div>
+      <hr />
+      <div><a href="https://www.airnow.gov/aqi/aqi-basics/" target="_blank">Read about Air Quality Index</a></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
