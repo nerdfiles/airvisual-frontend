@@ -19,7 +19,7 @@ export class ConfigurePage {
   selectedState: any;
   selectedCity: any;
 
-  constructor (
+  constructor(
     private browserStorageService: BrowserStorageService,
     private countriesReferenceService: CountriesReferenceService,
     private statesReferenceService: StatesReferenceService,
@@ -27,89 +27,91 @@ export class ConfigurePage {
     private appStateService: AppStateService
   ) {
     this.loadCountries().then(() => {
-      this.selectedCountry = browserStorageService.getLocal('selectedCountry') || ''
-      if (this.selectedCountry)
+      this.selectedCountry = browserStorageService.getLocal('selectedCountry') || '';
+      if (this.selectedCountry) {
         this._loadStates(this.selectedCountry).then(res => {
-          if (this.selectedState)
-            this._loadCities(this.selectedState)
-        })
-    })
+          if (this.selectedState) {
+            this._loadCities(this.selectedState);
+          }
+        });
+      }
+    });
   }
 
   /**
    * selectedCityHandler
    */
-  selectedCityHandler (selectedCity) {
-    this.selectedCity = selectedCity;
+  selectedCityHandler(city) {
+    this.selectedCity = city;
     this.browserStorageService.setLocal('selectedCity', this.selectedCity);
     this.appStateService.publish({
-      selectedCity: selectedCity,
+      selectedCity: city,
       selectedState: this.selectedState,
       selectedCountry: this.selectedCountry
     });
   }
 
-  _loadCities (selectedState) {
+  _loadCities(selectedState) {
     this.citiesReferenceService.getCities({
       state: selectedState,
       country: this.selectedCountry
     })
       .subscribe((citiesRef) => {
         this.cities = citiesRef._embedded;
-        this.selectedCity = this.browserStorageService.getLocal('selectedCity') || ''
+        this.selectedCity = this.browserStorageService.getLocal('selectedCity') || '';
       }, (e) => {
-        console.log({ error: e })
-      })
+        console.log({ error: e });
+      });
   }
 
   /**
    * selectedStateHandler
    */
-  selectedStateHandler (selectedState) {
+  selectedStateHandler(selectedState) {
     this.selectedState = selectedState;
     this.browserStorageService.setLocal('selectedState', this.selectedState);
 
-    this._loadCities(selectedState)
+    this._loadCities(selectedState);
   }
 
-  _loadStates (selectedCountry) {
+  _loadStates(selectedCountry) {
     return new Promise((res, rej) => {
       this.statesReferenceService.getStates({ country: selectedCountry })
         .subscribe((statesRef) => {
           this.states = statesRef._embedded;
-          this.selectedState = this.browserStorageService.getLocal('selectedState') || ''
-          res(statesRef)
+          this.selectedState = this.browserStorageService.getLocal('selectedState') || '';
+          res(statesRef);
         }, (e) => {
           console.log({ error: e });
-          rej({ error: e })
+          rej({ error: e });
         });
-    })
+    });
   }
 
   /**
    * selectedCountryHandler
    */
-  selectedCountryHandler (selectedCountry) {
+  selectedCountryHandler(selectedCountry) {
     this.selectedCountry = selectedCountry;
     this.browserStorageService.setLocal('selectedCountry', this.selectedCountry);
     this._loadStates(selectedCountry).then(res => {
-      console.log(res)
-    })
+      console.log(res);
+    });
   }
 
   /**
    * loadCountries
    */
-  loadCountries () {
+  loadCountries() {
     return new Promise((res, rej) => {
       this.countriesReferenceService.getCountries()
-      .subscribe((countriesRef) => {
-        this.countries = countriesRef._embedded;
-        res(countriesRef)
-      }, (e) => {
-        console.log({ error: e });
-        rej({ error: e });
-      });
+        .subscribe((countriesRef) => {
+          this.countries = countriesRef._embedded;
+          res(countriesRef);
+        }, (e) => {
+          console.log({ error: e });
+          rej({ error: e });
+        });
     });
   }
 

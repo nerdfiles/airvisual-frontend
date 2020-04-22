@@ -8,18 +8,18 @@ const querySting = require('query-string');
 })
 export class CitiesReferenceService {
 
-  url = 'http://localhost:3000/cities'
+  url = 'http://localhost:3000/cities';
 
-  constructor (private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getCities ({ state, country }) : Observable<any> {
+  getCities({ state, country }): Observable<any> {
     return this.http.get([
       this.url,
       '?',
       querySting.stringify({
-        state: state,
-        country: country
+        state,
+        country
       })
-    ].join(''))
+    ].join(''));
   }
 }

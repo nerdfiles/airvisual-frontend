@@ -10,9 +10,9 @@ export class CountriesReferenceService {
 
   url = 'http://localhost:3000/countries';
 
-  constructor (private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getCountries () : Observable<any> {
-    return this.http.get(this.url)
+  getCountries(): Observable<any> {
+    return this.http.get(this.url);
   }
 }

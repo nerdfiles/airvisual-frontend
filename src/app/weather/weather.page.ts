@@ -9,7 +9,8 @@ import { AppStateService } from '../app-state.service';
   styleUrls: ['weather.page.scss']
 })
 export class WeatherPage implements OnInit {
-  weatherIconIndex:object = {
+
+  weatherIconIndex: object = {
     '01d': {
       description: 'clear sky (day)'
     },
@@ -49,7 +50,7 @@ export class WeatherPage implements OnInit {
     '50n': {
       description: 'mist (night)'
     }
-  }
+  };
 
   sub: any;
 
@@ -81,9 +82,10 @@ export class WeatherPage implements OnInit {
       }
     },
   };
+
   altIcon = {
     description: null
-  }
+  };
 
   constructor(
     private browserStorageService: BrowserStorageService,
@@ -105,7 +107,6 @@ export class WeatherPage implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.selectedCity)
     if (this.selectedCountry && this.selectedState && this.selectedCity) {
       this.loadCityData({
         city: this.selectedCity,
@@ -115,14 +116,15 @@ export class WeatherPage implements OnInit {
     }
   }
 
-  loadCityData ({ city, state, country }) {
-    this.sub = this.cityService.getData({ city, state, country }).subscribe(cityRef => {
-      this.selectedCityData = cityRef && cityRef.data ? cityRef.data : {}
+  loadCityData({ city, state, country }) {
+    this.sub = this.cityService.getData({ city, state, country })
+      .subscribe(cityRef => {
+        this.selectedCityData = cityRef && cityRef.data ? cityRef.data : {};
 
-      this.altIcon = this.weatherIconIndex[this.selectedCityData.current.weather.ic] || this.altIcon
-    }, e => {
-      console.log({ error: e })
-    })
+        this.altIcon = this.weatherIconIndex[this.selectedCityData.current.weather.ic] || this.altIcon;
+      }, e => {
+        console.log({ error: e });
+      });
   }
 
 }
