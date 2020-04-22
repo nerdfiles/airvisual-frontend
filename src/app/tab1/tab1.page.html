@@ -14,4 +14,16 @@
   </ion-header>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <ion-item>
+    <ion-label>Users</ion-label>
+    <ion-select 
+      (ngModelChange)="selectedCountryHandler($event)"
+      [ngModel]="selectedCountry"
+    >
+      <ion-select-option 
+        *ngFor="let country of countries"
+      >{{country.country}}</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-content>
