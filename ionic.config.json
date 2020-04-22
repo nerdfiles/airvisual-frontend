@@ -1,0 +1,7 @@
+{
+  "name": "airvisual-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
