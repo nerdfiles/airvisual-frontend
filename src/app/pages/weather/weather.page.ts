@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
-import { BrowserStorageService } from '../browser-storage.service';
-import { CityService } from '../city.service';
-import { AppStateService } from '../app-state.service';
+import { BrowserStorageService } from '../../services/browser-storage.service';
+import { CityService } from '../../services/city.service';
+import { AppStateService } from '../../services/app-state.service';
 
 @Component({
   selector: 'app-weather',

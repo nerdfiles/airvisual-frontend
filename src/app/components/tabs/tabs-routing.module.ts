@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -9,15 +11,21 @@ const routes: Routes = [
     children: [
       {
         path: 'configure',
-        loadChildren: () => import('../configure/configure.module').then(m => m.ConfigurePageModule)
+        loadChildren: () =>
+          import('../../pages/configure/configure.module')
+            .then(m => m.ConfigurePageModule)
       },
       {
         path: 'weather',
-        loadChildren: () => import('../weather/weather.module').then(m => m.WeatherPageModule)
+        loadChildren: () =>
+          import('../../pages/weather/weather.module')
+            .then(m => m.WeatherPageModule)
       },
       {
         path: 'profile',
-        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+        loadChildren: () =>
+          import('../../pages/profile/profile.module')
+            .then(m => m.ProfilePageModule)
       },
       {
         path: '',

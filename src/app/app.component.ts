@@ -4,6 +4,9 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import store from './store/index';
+import { addArticle } from './actions/index';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -19,9 +22,18 @@ export class AppComponent {
   }
 
   initializeApp() {
+    store.subscribe(() => {
+      console.log(store.getState());
+    });
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      store.dispatch(
+        addArticle({
+          title: 'Some article',
+          id: Math.floor(Math.random() * 100000)
+        })
+      )
     });
   }
 }

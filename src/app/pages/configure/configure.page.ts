@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CountriesReferenceService } from '../countries-reference.service';
-import { StatesReferenceService } from '../states-reference.service';
-import { CitiesReferenceService } from '../cities-reference.service';
-import { BrowserStorageService } from '../browser-storage.service';
-import { AppStateService } from '../app-state.service';
+import { CountriesReferenceService } from '../../services/countries-reference.service';
+import { StatesReferenceService } from '../../services/states-reference.service';
+import { CitiesReferenceService } from '../../services/cities-reference.service';
+import { BrowserStorageService } from '../../services/browser-storage.service';
+import { AppStateService } from '../../services/app-state.service';
 
 @Component({
   selector: 'app-configure',
