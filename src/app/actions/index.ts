@@ -1,8 +1,11 @@
-import { ADD_ARTICLE } from '../constants/action-types';
+import {
+  DATA_LOADED,
+  DATA_REQUESTED
+} from '../constants/action-types';
 
-export function addArticle(payload) {
+export function getData(url) {
   return {
-    type: ADD_ARTICLE,
-    payload
+    type: DATA_REQUESTED,
+    payload: { url }
   };
 }

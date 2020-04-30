@@ -7,4 +7,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ul>
+    <li *ngFor="let article of articles">
+      {{article.message}}
+    </li>
+  </ul>
 </ion-content>
