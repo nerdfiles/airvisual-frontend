@@ -2,8 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ConfigurePage } from './configure.page';
 
+import { ConfigurePage } from './configure.page';
+import { ChildComponentComponent } from '../../child-component/child-component.component';
+import { ParentComponentComponent } from '../../parent-component/parent-component.component';
 import { ConfigurePageRoutingModule } from './configure-routing.module';
 
 @NgModule({
@@ -13,6 +15,10 @@ import { ConfigurePageRoutingModule } from './configure-routing.module';
     FormsModule,
     ConfigurePageRoutingModule
   ],
-  declarations: [ConfigurePage]
+  declarations: [
+    ConfigurePage,
+    ParentComponentComponent,
+    ChildComponentComponent
+  ]
 })
 export class ConfigurePageModule {}
