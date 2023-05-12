@@ -1,28 +1,47 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-const queryString = require('query-string');
+/**
+ * @version wtfpl, version 2
+ * @author aha
+ * @description .
+ */
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs'
+const queryString = require('query-string')
 
 @Injectable({
   providedIn: 'root'
 })
 export class CityService {
 
-  url = 'http://localhost:3000/cities';
+  URL = 'http://localhost:3000/cities'
 
-  constructor(private http: HttpClient) { }
+  /**
+   * constructor.
+   *
+   * @param {HttpClient} http
+   */
+  constructor (private http: HttpClient) { }
 
-  getData({ city, state, country }): Observable<any> {
-    const cityName = city;
-    return this.http.get([
-      this.url,
+  /**
+   * getData.
+   *
+   * @param {}
+   * @returns {Observable<any>}
+   */
+  getData ({ city, state, country }): Observable<any> {
+    const cityName = city
+    const PROMPT = '?'
+    const GLUE = ''
+    const URL = [
+      this.URL,
       '/',
       cityName,
-      '?',
-      queryString.stringify({
+      PROMPT,
+      querySting.stringify({
         state,
         country
       })
-    ].join(''));
+    ].join(GLUE)
+    return this.http.get(URL)
   }
 }

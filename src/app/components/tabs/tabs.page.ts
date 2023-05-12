@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+/**
+ * @author aha
+ * @version wtfpl, version 2
+ * @description .
+ */
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-tabs',
@@ -6,7 +11,7 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
   constructor() {}
-
 }
+
+// EOF

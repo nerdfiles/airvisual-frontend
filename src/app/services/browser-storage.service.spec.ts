@@ -1,12 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing'
 
-import { BrowserStorageService } from './browser-storage.service';
+import { BrowserStorageService } from './browser-storage.service'
 
 describe('BrowserStorageService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({}))
 
   it('should be created', () => {
-    const service: BrowserStorageService = TestBed.get(BrowserStorageService);
-    expect(service).toBeTruthy();
-  });
-});
+    const service: BrowserStorageService = TestBed.get(BrowserStorageService)
+    expect(service).toBeTruthy()
+  })
+})

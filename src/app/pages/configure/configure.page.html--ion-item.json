@@ -1,0 +1,47 @@
+{
+  "status": "countedFiles",
+  "selector": "ion-item",
+  "extension": null,
+  "ignore": null,
+  "files": "configure.page.html",
+  "numberOfFiles": 1,
+  "message": "Searching for \"ion-item\" in 1 file."
+}
+{
+  "status": "processingFile",
+  "file": "configure.page.html",
+  "fileNumber": 1,
+  "numberOfFiles": 1
+}
+{
+  "status": "foundMatch",
+  "file": "configure.page.html",
+  "matches": 3,
+  "matchesDetails": [
+    {
+      "html": "<ion-item>\n    <ion-label>Country</ion-label>",
+      "line": 10,
+      "column": 3
+    },
+    {
+      "html": "<ion-item>\n    <ion-label>State</ion-label>",
+      "line": 22,
+      "column": 3
+    },
+    {
+      "html": "<ion-item>\n    <ion-label>City</ion-label>",
+      "line": 34,
+      "column": 3
+    }
+  ],
+  "message": "Found 3 matches in configure.page.html"
+}
+{
+  "status": "complete",
+  "totalMatches": 3,
+  "numberOfFiles": 1,
+  "numberOfFilesWithMatches": 1,
+  "duration": 0.08,
+  "selector": "ion-item",
+  "message": "\nFound 3 matches in 1 file (0.08 seconds)."
+}

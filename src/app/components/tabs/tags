@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/30cd8e0/
+TabsPage	tabs.page.ts	/^export class TabsPage {$/;"	c
+TabsPageModule	tabs.module.ts	/^export class TabsPageModule {}$/;"	c
+TabsPageRoutingModule	tabs-routing.module.ts	/^export class TabsPageRoutingModule {}$/;"	c
+Test	tabs.page.html	/^<h1>Test<\/h1>$/;"	h
+Understanding basic concepts in ctags	test.html	/^    <h1>Understanding basic concepts in ctags<\/h1>$/;"	h
+children	tabs-routing.module.ts	/^    children: [$/;"	C
+component	tabs.page.spec.ts	/^  let component: TabsPage;$/;"	v
+constructor	tabs.page.ts	/^  constructor() {}$/;"	m	class:TabsPage
+fixture	tabs.page.spec.ts	/^  let fixture: ComponentFixture<TabsPage>;$/;"	v
+routes	tabs-routing.module.ts	/^const routes: Routes = [$/;"	C

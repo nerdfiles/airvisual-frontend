@@ -1,7 +1,12 @@
-import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
-import { BrowserStorageService } from '../../services/browser-storage.service';
-import { CityService } from '../../services/city.service';
-import { AppStateService } from '../../services/app-state.service';
+/**
+ * @author aha
+ * @version wtfpl, version 2
+ * @description .
+ */
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core'
+import { BrowserStorageService } from '../../services/browser-storage.service'
+import { CityService } from '../../services/city.service'
+import { AppStateService } from '../../services/app-state.service'
 
 @Component({
   selector: 'app-weather',
@@ -50,13 +55,13 @@ export class WeatherPage implements OnInit {
     '50n': {
       description: 'mist (night)'
     }
-  };
+  }
 
-  sub: any;
+  sub: any
 
-  selectedCity: string;
-  selectedState: string;
-  selectedCountry: string;
+  selectedCity: string
+  selectedState: string
+  selectedCountry: string
   selectedCityData: any = {
     city: null,
     state: null,
@@ -81,28 +86,28 @@ export class WeatherPage implements OnInit {
         ic: null, // weather icon code
       }
     },
-  };
+  }
 
   altIcon = {
     description: null
-  };
+  }
 
   constructor(
     private browserStorageService: BrowserStorageService,
     private cityService: CityService,
     private appStateService: AppStateService
   ) {
-    this.selectedCountry = browserStorageService.getLocal('selectedCountry') || '';
-    this.selectedState = browserStorageService.getLocal('selectedState') || '';
-    this.selectedCity = browserStorageService.getLocal('selectedCity') || '';
+    this.selectedCountry = browserStorageService.getLocal('selectedCountry') || ''
+    this.selectedState = browserStorageService.getLocal('selectedState') || ''
+    this.selectedCity = browserStorageService.getLocal('selectedCity') || ''
 
     this.appStateService.event.subscribe((data) => {
       this.loadCityData({
         city: data.selectedCity ? data.selectedCity : this.selectedCity,
         state: data.selectedState ? data.selectedState : this.selectedState,
         country: data.selectedCountry ? data.selectedCountry : this.selectedCountry
-      });
-    });
+      })
+    })
   }
 
   ngOnInit() {
@@ -112,19 +117,21 @@ export class WeatherPage implements OnInit {
         city: this.selectedCity,
         state: this.selectedState,
         country: this.selectedCountry
-      });
+      })
     }
   }
 
   loadCityData({ city, state, country }) {
     this.sub = this.cityService.getData({ city, state, country })
       .subscribe(cityRef => {
-        this.selectedCityData = cityRef && cityRef.data ? cityRef.data : {};
+        this.selectedCityData = cityRef && cityRef.data ? cityRef.data : {}
 
-        this.altIcon = this.weatherIconIndex[this.selectedCityData.current.weather.ic] || this.altIcon;
+        this.altIcon = this.weatherIconIndex[this.selectedCityData.current.weather.ic] || this.altIcon
       }, e => {
-        console.log({ error: e });
-      });
+        console.log({ error: e })
+      })
   }
 
 }
+
+/// EOF

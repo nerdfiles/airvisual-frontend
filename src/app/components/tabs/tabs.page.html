@@ -1,4 +1,11 @@
 <ion-tabs>
+  <div class="a-class">
+    <div class="inner">
+      <input type="text" name="textInput" />
+      <a class="anchor" href="lol">lol</a>
+      <div *ngFor="let i of ten">cats</div>
+    </div>
+  </div>
 
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="configure">
@@ -6,7 +13,7 @@
       <ion-label>Configure</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="weather">
+    <ion-tab-button tab="weather" (click)="actualFunction()">
       <ion-icon name="ellipse"></ion-icon>
       <ion-label>Weather</ion-label>
     </ion-tab-button>
@@ -16,5 +23,6 @@
       <ion-label>Profile</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-
 </ion-tabs>
+
+<!-- EOF -->

@@ -1,11 +1,16 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { WeatherPage } from './weather.page';
+/**
+ * @author aha
+ * @version wtfpl, version 2
+ * @description .
+ */
+import { IonicModule } from '@ionic/angular'
+import { RouterModule } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { FormsModule } from '@angular/forms'
+import { WeatherPage } from './weather.page'
 
-import { WeatherPageRoutingModule } from './weather-routing.module';
+import { WeatherPageRoutingModule } from './weather-routing.module'
 
 @NgModule({
   imports: [
@@ -17,3 +22,5 @@ import { WeatherPageRoutingModule } from './weather-routing.module';
   declarations: [WeatherPage]
 })
 export class WeatherPageModule {}
+
+/// EOF

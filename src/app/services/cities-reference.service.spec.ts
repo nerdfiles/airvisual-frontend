@@ -1,12 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing'
 
-import { CitiesReferenceService } from './cities-reference.service';
+import { CitiesReferenceService } from './cities-reference.service'
 
 describe('CitiesReferenceService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  beforeEach(() => TestBed.configureTestingModule({}))
 
   it('should be created', () => {
-    const service: CitiesReferenceService = TestBed.get(CitiesReferenceService);
-    expect(service).toBeTruthy();
-  });
-});
+    const service: CitiesReferenceService = TestBed.get(CitiesReferenceService)
+    expect(service).toBeTruthy()
+  })
+})

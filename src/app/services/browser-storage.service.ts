@@ -1,59 +1,115 @@
-import { Injectable } from '@angular/core';
+/**
+ * @version wtfpl, version 2
+ * @author aha
+ * @description .
+ */
+import { Injectable } from '@angular/core'
 
 @Injectable({
   providedIn: 'root'
 })
 export class BrowserStorageService {
-
-  getSession(key: string): any {
-    const data = window.sessionStorage.getItem(key);
+  /**
+   * getSession.
+   *
+   * @param {string} key
+   * @returns {any}
+   */
+  getSession (key: string): any {
+    const data = window.sessionStorage.getItem(key)
     if (data) {
-      return JSON.parse(data);
+      return JSON.parse(data)
     } else {
-      return null;
+      return null
     }
   }
 
-  setSession(key: string, value: any): void {
-    const data = value === undefined ? '' : JSON.stringify(value);
-    window.sessionStorage.setItem(key, data);
+  /**
+   * setSession.
+   *
+   * @param {string} key
+   * @param {any} value
+   * @returns {void}
+   */
+  setSession (key: string, value: any): void {
+    const data = value === undefined ? '' : JSON.stringify(value)
+    window.sessionStorage.setItem(key, data)
   }
 
-  removeSession(key: string): void {
-    window.sessionStorage.removeItem(key);
+  /**
+   * removeSession.
+   *
+   * @param {string} key
+   * @returns {void}
+   */
+  removeSession (key: string): void {
+    window.sessionStorage.removeItem(key)
   }
 
-  removeAllSessions(): void {
+  /**
+   * removeAllSessions.
+   *
+   * @returns {void}
+   */
+  removeAllSessions (): void {
     for (const key in window.sessionStorage) {
       if (window.sessionStorage.hasOwnProperty(key)) {
-        this.removeSession(key);
+        this.removeSession(key)
       }
     }
   }
 
-  getLocal(key: string): any {
-    const data = window.localStorage.getItem(key);
+  /**
+   * getLocal.
+   *
+   * @param {string} key
+   * @returns {any}
+   */
+  getLocal (key: string): any {
+    const data = window.localStorage.getItem(key)
     if (data) {
-      return JSON.parse(data);
+      return JSON.parse(data)
     } else {
-      return null;
+      return null
     }
   }
 
-  setLocal(key: string, value: any): void {
-    const data = value === undefined ? '' : JSON.stringify(value);
-    window.localStorage.setItem(key, data);
+  /**
+   * setLocal.
+   *
+   * @param {string} key
+   * @param {any} value
+   * @returns {void}
+   */
+  setLocal (key: string, value: any): void {
+    const isUndefined = (value === undefined)
+    const data = isUndefined ? '' 
+                             : JSON.stringify(value)
+    window.localStorage.setItem(key, data)
   }
 
-  removeLocal(key: string): void {
-    window.localStorage.removeItem(key);
+  /**
+   * removeLocal.
+   *
+   * @param {string} key
+   * @returns {void}
+   */
+  removeLocal (key: string): void {
+    window.localStorage.removeItem(key)
   }
 
-  removeAllLocals(): void {
+  /**
+   * removeAllLocals.
+   *
+   * @returns {void}
+   */
+  removeAllLocals (): void {
     for (const key in window.localStorage) {
       if (window.localStorage.hasOwnProperty(key)) {
-        this.removeLocal(key);
+        this.removeLocal(key)
       }
     }
   }
 }
+
+/// EOF

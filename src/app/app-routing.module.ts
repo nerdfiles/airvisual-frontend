@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 import {
   PreloadAllModules,
   RouterModule,
   Routes
-} from '@angular/router';
+} from '@angular/router'
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
       import('./components/tabs/tabs.module')
         .then(m => m.TabsPageModule)
   }
-];
+]
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
